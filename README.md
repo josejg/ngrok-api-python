@@ -9,7 +9,7 @@ easier to consume in Python.
 
 This library is published on [PyPi](https://pypi.org/project/ngrok-api/):
 
-    pip install ngrok-api
+    pip install git+https://github.com/josejg/ngrok-api-python.git
 
 ## Support
 
