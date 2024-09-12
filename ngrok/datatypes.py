@@ -3247,6 +3247,8 @@ class HTTPSEdgeList(object):
 
 class HTTPSEdge(object):
     def __init__(self, client, props):
+        if 'metadata' not in props:
+            props['metadata'] = None
         self._client = client
         self._props = props
         self._props["mutual_tls"] = (
