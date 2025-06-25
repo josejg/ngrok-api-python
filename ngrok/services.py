@@ -3517,6 +3517,41 @@ class EndpointsClient(object):
     def __init__(self, client):
         self._client = client
 
+    def create(
+        self,
+        url: str,
+        type: str,
+        traffic_policy: str,
+        description: str = None,
+        metadata: str = None,
+        bindings: Sequence[str] = None,
+        pooling_enabled: bool = False,
+    ) -> Endpoint:
+        """Create an endpoint, currently available only for cloud endpoints
+
+        :param url: the url of the endpoint
+        :param type: Type of endpoint. Only 'cloud' is currently supported (represents a cloud endpoint). Defaults to 'cloud' if not specified.
+        :param traffic_policy: The traffic policy attached to this endpoint
+        :param description: user-supplied description of the associated tunnel
+        :param metadata: user-supplied metadata of the associated tunnel or edge object
+        :param bindings: the bindings associated with this endpoint
+        :param pooling_enabled:
+
+        https://ngrok.com/docs/api#api-endpoints-create
+        """
+        path = "/endpoints"
+        body_arg = dict(
+            url=url,
+            type=type,
+            traffic_policy=traffic_policy,
+            description=description,
+            metadata=metadata,
+            bindings=bindings,
+            pooling_enabled=pooling_enabled,
+        )
+        result = self._client.http_client.post(path, body_arg)
+        return Endpoint(self._client, result)
+
     def list(
         self,
         before_id: str = None,
@@ -3554,6 +3589,60 @@ class EndpointsClient(object):
         body_arg = None
         result = self._client.http_client.get(path, body_arg)
         return Endpoint(self._client, result)
+
+    def update(
+        self,
+        id: str,
+        url: str = None,
+        traffic_policy: str = None,
+        description: str = None,
+        metadata: str = None,
+        bindings: Sequence[str] = None,
+        pooling_enabled: bool = False,
+    ) -> Endpoint:
+        """Update an Endpoint by ID, currently available only for cloud endpoints
+
+        :param id: unique endpoint resource identifier
+        :param url: the url of the endpoint
+        :param traffic_policy: The traffic policy attached to this endpoint
+        :param description: user-supplied description of the associated tunnel
+        :param metadata: user-supplied metadata of the associated tunnel or edge object
+        :param bindings: the bindings associated with this endpoint
+        :param pooling_enabled:
+
+        https://ngrok.com/docs/api#api-endpoints-update
+        """
+        path = "/endpoints/{id}"
+        path = path.format(
+            id=id,
+        )
+        body_arg = dict(
+            url=url,
+            traffic_policy=traffic_policy,
+            description=description,
+            metadata=metadata,
+            bindings=bindings,
+            pooling_enabled=pooling_enabled,
+        )
+        result = self._client.http_client.patch(path, body_arg)
+        return Endpoint(self._client, result)
+
+    def delete(
+        self,
+        id: str,
+    ):
+        """Delete an Endpoint by ID, currently available only for cloud endpoints
+
+        :param id: a resource identifier
+
+        https://ngrok.com/docs/api#api-endpoints-delete
+        """
+        path = "/endpoints/{id}"
+        path = path.format(
+            id=id,
+        )
+        body_arg = None
+        self._client.http_client.delete(path, body_arg)
 
 
 class EventDestinationsClient(object):

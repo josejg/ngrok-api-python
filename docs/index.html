@@ -271,7 +271,7 @@ HTTP API</a> from Python.</p>
 <p>In your application’s code, construct an <a class="reference internal" href="client.html#ngrok.Client" title="ngrok.Client"><code class="xref py py-class docutils literal notranslate"><span class="pre">Client</span></code></a> object
 with the API key. API services can be accessed as properties of the client
 object. That’s it!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ngrok</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ngrok</span>
 
 <span class="c1"># construct the api client</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">ngrok</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s2">&quot;&lt;API KEY&gt;&quot;</span><span class="p">)</span>
@@ -293,7 +293,7 @@ object. That’s it!</p>
 from you. All response objects from any <code class="docutils literal notranslate"><span class="pre">list()</span></code> methods return an object that
 implements an <code class="docutils literal notranslate"><span class="pre">__iter__()</span></code> method which will automatically fetch additional
 pages for you.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ngrok</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ngrok</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">ngrok</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s2">&quot;&lt;API KEY&gt;&quot;</span><span class="p">)</span>
 
@@ -331,7 +331,7 @@ cred = client.credentials.update(“cr_1kYyunEyn6XHHlqyMBLrj5nxkoz”, metadata=
 <h3>Error Handling<a class="headerlink" href="#error-handling" title="Permalink to this heading">#</a></h3>
 <p>The ngrok API returns detailed information when an API call fails. Consult the
 section on <a class="reference internal" href="errors.html#errors"><span class="std std-ref">errors</span></a> for additional details.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ngrok</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ngrok</span>
 
 <span class="n">client</span> <span class="o">=</span> <span class="n">ngrok</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s2">&quot;&lt;API KEY&gt;&quot;</span><span class="p">)</span>
 
@@ -576,19 +576,35 @@ section on <a class="reference internal" href="errors.html#errors"><span class="
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint"><code class="docutils literal notranslate"><span class="pre">Endpoint</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.bindings"><code class="docutils literal notranslate"><span class="pre">Endpoint.bindings</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.created_at"><code class="docutils literal notranslate"><span class="pre">Endpoint.created_at</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.delete"><code class="docutils literal notranslate"><span class="pre">Endpoint.delete()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.description"><code class="docutils literal notranslate"><span class="pre">Endpoint.description</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.domain"><code class="docutils literal notranslate"><span class="pre">Endpoint.domain</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.edge"><code class="docutils literal notranslate"><span class="pre">Endpoint.edge</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.host"><code class="docutils literal notranslate"><span class="pre">Endpoint.host</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.hostport"><code class="docutils literal notranslate"><span class="pre">Endpoint.hostport</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.id"><code class="docutils literal notranslate"><span class="pre">Endpoint.id</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.metadata"><code class="docutils literal notranslate"><span class="pre">Endpoint.metadata</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.name"><code class="docutils literal notranslate"><span class="pre">Endpoint.name</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.pooling_enabled"><code class="docutils literal notranslate"><span class="pre">Endpoint.pooling_enabled</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.port"><code class="docutils literal notranslate"><span class="pre">Endpoint.port</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.principal"><code class="docutils literal notranslate"><span class="pre">Endpoint.principal</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.proto"><code class="docutils literal notranslate"><span class="pre">Endpoint.proto</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.public_url"><code class="docutils literal notranslate"><span class="pre">Endpoint.public_url</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.region"><code class="docutils literal notranslate"><span class="pre">Endpoint.region</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.scheme"><code class="docutils literal notranslate"><span class="pre">Endpoint.scheme</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.tcp_addr"><code class="docutils literal notranslate"><span class="pre">Endpoint.tcp_addr</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.traffic_policy"><code class="docutils literal notranslate"><span class="pre">Endpoint.traffic_policy</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.tunnel"><code class="docutils literal notranslate"><span class="pre">Endpoint.tunnel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.tunnel_session"><code class="docutils literal notranslate"><span class="pre">Endpoint.tunnel_session</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.type"><code class="docutils literal notranslate"><span class="pre">Endpoint.type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.update"><code class="docutils literal notranslate"><span class="pre">Endpoint.update()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.updated_at"><code class="docutils literal notranslate"><span class="pre">Endpoint.updated_at</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.upstream_protocol"><code class="docutils literal notranslate"><span class="pre">Endpoint.upstream_protocol</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.upstream_url"><code class="docutils literal notranslate"><span class="pre">Endpoint.upstream_url</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.uri"><code class="docutils literal notranslate"><span class="pre">Endpoint.uri</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="datatypes.html#ngrok.datatypes.Endpoint.url"><code class="docutils literal notranslate"><span class="pre">Endpoint.url</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="datatypes.html#ngrok.datatypes.EndpointBackend"><code class="docutils literal notranslate"><span class="pre">EndpointBackend</span></code></a><ul>
@@ -1796,8 +1812,11 @@ section on <a class="reference internal" href="errors.html#errors"><span class="
 </li>
 <li class="toctree-l1"><a class="reference internal" href="endpoints.html">Endpoints</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="endpoints.html#ngrok.services.EndpointsClient"><code class="docutils literal notranslate"><span class="pre">EndpointsClient</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="endpoints.html#ngrok.services.EndpointsClient.create"><code class="docutils literal notranslate"><span class="pre">EndpointsClient.create()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="endpoints.html#ngrok.services.EndpointsClient.delete"><code class="docutils literal notranslate"><span class="pre">EndpointsClient.delete()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="endpoints.html#ngrok.services.EndpointsClient.get"><code class="docutils literal notranslate"><span class="pre">EndpointsClient.get()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="endpoints.html#ngrok.services.EndpointsClient.list"><code class="docutils literal notranslate"><span class="pre">EndpointsClient.list()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="endpoints.html#ngrok.services.EndpointsClient.update"><code class="docutils literal notranslate"><span class="pre">EndpointsClient.update()</span></code></a></li>
 </ul>
 </li>
 </ul>
